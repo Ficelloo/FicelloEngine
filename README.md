@@ -23,5 +23,4 @@ apt-get install libsdl2-dev libsdl2-2.0-0
 cd FicelloEngine/build
 chmod +x build.sh
 ./build.sh
-make
 ```
