@@ -28,7 +28,7 @@ chmod +x build.sh
 ```
 
 ## How to use FicelloEngine to make games?
-You need to go on release section or you can build from source to get "FicelloEngine" binary.
+You need to go on release section to download the latest version of FicelloEngine or you can build from source to get "FicelloEngine" binary.
 
 Once you got it, you can try your game by doing that command:
 
