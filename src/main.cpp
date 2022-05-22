@@ -34,9 +34,9 @@ int main(int argc, char * argv[]){
     SDL_Event event;    // Event variable
     
     lua_State* L = luaL_newstate();
-	luaL_openlibs(L);
+    luaL_openlibs(L);
     luaL_dostring(L, "print('Hello world from Lua!')");
-	lua_close(L);
+    lua_close(L);
 
     while(!(event.type == SDL_QUIT)){
         SDL_Delay(10);  // setting some Delay
