@@ -1,5 +1,5 @@
 # FicelloEngine
-A small open source C++ SDL2 game engine for linux
+A small open source C++ SDL2 game engine for linux with lua as scripting langage
 
 ## Downloading dependencies
 Arch Linux:
