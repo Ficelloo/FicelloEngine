@@ -1,4 +1,5 @@
 #include <SDL.h>
+#include <iostream>
 
 extern "C" {
 	#include "lua.h"
@@ -30,12 +31,12 @@ class FicelloEngine{
 };
 
 int main(int argc, char * argv[]){
-    FicelloEngine window(200, 400);
+    FicelloEngine window(1080, 1920);
     SDL_Event event;    // Event variable
     
     lua_State* L = luaL_newstate();
     luaL_openlibs(L);
-    luaL_dostring(L, "print('Hello world from Lua!')");
+    luaL_dofile(L, argv[1]);
     lua_close(L);
 
     while(!(event.type == SDL_QUIT)){

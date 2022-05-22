@@ -5,7 +5,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 project (FicelloEngine)
 
-add_executable(FicelloEngine main.cpp)
+add_executable(FicelloEngine 
+	main.cpp
+	Forms.cpp
+)
 
 # find SDL2 package
 INCLUDE(FindPkgConfig)
