@@ -16,5 +16,6 @@ PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS})
 
 # Linking project with libraries
-target_link_libraries(FicelloEngine ${SDL2_LIBRARIES})
+target_link_libraries(FicelloEngine LuaLib ${SDL2_LIBRARIES})
+
 

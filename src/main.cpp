@@ -1,5 +1,11 @@
 #include <SDL.h>
 
+extern "C" {
+	#include "lua.h"
+	#include "lualib.h"
+	#include "lauxlib.h"
+}
+
 class FicelloEngine{
 	public:
 		FicelloEngine(int height_, int width_): height(height_), width(width_){
@@ -26,6 +32,11 @@ class FicelloEngine{
 int main(int argc, char * argv[]){
     FicelloEngine window(200, 400);
     SDL_Event event;    // Event variable
+    
+    lua_State* L = luaL_newstate();
+	luaL_openlibs(L);
+    luaL_dostring(L, "print('Hello world from Lua!')");
+	lua_close(L);
 
     while(!(event.type == SDL_QUIT)){
         SDL_Delay(10);  // setting some Delay
