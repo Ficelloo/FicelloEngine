@@ -1,1 +1,3 @@
 cmake ../
+make
+make
