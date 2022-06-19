@@ -6,8 +6,25 @@ extern "C" {
 	#include "lauxlib.h"
 }
 
-static int circle(lua_State *L)
+static int test_func(lua_State *L)
 {
-	lua_pushnumber(L, 20);
-	return 1;
+  // parameters
+  int n = lua_gettop(L);
+  if(n < 1)
+  {
+    lua_pushstring(L, "test: not enough arguments");
+	lua_error(L);
+  }
+
+  // getting string argument
+  const char *str = lua_tostring(L, 1);
+  if(str == NULL)
+  {
+    lua_pushstring(L, "test: non-string");
+	lua_error(L);
+  }
+
+  const char* output = lua_pushstring(L, str);
+  printf(output);
+  return 1;
 }
