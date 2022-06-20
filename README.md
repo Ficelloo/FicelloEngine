@@ -1,5 +1,5 @@
 # FicelloEngine
-A small open source C++ SDL2 game engine for linux with lua as scripting langage
+A small open source C++ SDL2 game engine for linux with lua as scripting language
 
 This is still in creation so there is no doc at the moment.
 
