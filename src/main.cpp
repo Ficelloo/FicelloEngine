@@ -1,8 +1,7 @@
-#include <SDL.h>
-#include <iostream>
-#include <string>
-#include <sol/sol.hpp>
+#include "ficello.hpp"
 
-int main(int argc, char* argv[]){
-	
+int main(int argc, char* argv[])
+{
+	ficello::engine myFicello{};
+	myFicello.run();
 }
