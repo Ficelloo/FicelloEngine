@@ -1,34 +1,10 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <string>
-extern "C" {
-#include <lua.h>
-#include <lualib.h>
-#include <lauxlib.h>
-}
+#include <sol/sol.hpp>
 
-
-int test_func(lua_State* L)
-{
-	// parameters
-	int n = lua_gettop(L);
-	if (n < 1)
-	{
-		lua_pushstring(L, "test: not enough arguments");
-		lua_error(L);
-	}
-
-	// getting string argument
-	const char* str = lua_tostring(L, 1);
-	if (str == NULL)
-	{
-		lua_pushstring(L, "test: non-string");
-		lua_error(L);
-	}
-
-	const char* output = lua_pushstring(L, str);
-	std::cout << output << '\n';
-	return 1;
+void test_func(std::string text) {
+	std::cout << text << std::endl;
 }
 
 class FicelloEngine {
@@ -62,12 +38,13 @@ int main(int argc, char* argv[]){
 
 	FicelloEngine window(1080, 1920);
 	SDL_Event event;    
+
+	sol::state lua{};
+	lua.set_function("test", test_func);
 				
-	lua_State* L = luaL_newstate();
-	luaL_openlibs(L);
-	lua_register(L, "test", test_func);
-	luaL_dofile(L, argv[1]);
-	lua_close(L);
+	luaL_openlibs(lua);
+	luaL_dofile(lua, argv[1]);
+	lua_close(lua);
 
 	while(!(event.type == SDL_QUIT)){
 		SDL_Delay(10); 
