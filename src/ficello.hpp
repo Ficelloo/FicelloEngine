@@ -2,14 +2,14 @@
 #include <entt/entt.hpp>
 #include <ostream>
 
-//premier prototype de l'objet représentant l'engine
+//engine object
 
 namespace ficello
 {
 	class engine
 	{
 		entt::registry globalRegistry_;
-		//std::ostream debugStream_; //flux de débugage, peut être utilisé sur std::cout/cerr ou sur un fichier pour crée un fichier de logs 
+		//std::ostream debugStream_; //flux de dï¿½bugage, peut ï¿½tre utilisï¿½ sur std::cout/cerr ou sur un fichier pour crï¿½e un fichier de logs 
 		//need a window class
 		//need a renderer class
 
