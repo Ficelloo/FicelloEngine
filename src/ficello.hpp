@@ -2,7 +2,7 @@
 #include <entt/entt.hpp>
 #include <sstream>
 
-//premier prototype de l'objet représentant l'engine
+//engine object
 
 namespace ficello
 {
