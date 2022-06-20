@@ -13,7 +13,7 @@ static int test_func(lua_State *L)
   if(n < 1)
   {
     lua_pushstring(L, "test: not enough arguments");
-	lua_error(L);
+	  lua_error(L);
   }
 
   // getting string argument
@@ -21,7 +21,7 @@ static int test_func(lua_State *L)
   if(str == NULL)
   {
     lua_pushstring(L, "test: non-string");
-	lua_error(L);
+	  lua_error(L);
   }
 
   const char* output = lua_pushstring(L, str);

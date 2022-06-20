@@ -12,10 +12,10 @@ extern "C" {
 class FicelloEngine {
 	public:
 		FicelloEngine(int height_, int width_): height(height_), width(width_){
-		    SDL_Init(SDL_INIT_VIDEO);       // init SDL as a video
+		    SDL_Init(SDL_INIT_VIDEO);       
 		    SDL_CreateWindowAndRenderer(width, height, 0, &window, &renderer);
-		    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);      // draw color
-		    SDL_RenderClear(renderer);      // clear new created window
+		    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);      
+		    SDL_RenderClear(renderer);     
 		    SDL_RenderPresent(renderer);    
 		}
 
@@ -26,37 +26,30 @@ class FicelloEngine {
 		}
 
 	private:
-		int height;     // window height
-		int width;      // window width
-		SDL_Renderer *renderer = NULL;      // Pointer render var
-		SDL_Window *window = NULL;      // Pointer window var 
+		int height;     
+		int width;      
+		SDL_Renderer *renderer = nullptr;      
+		SDL_Window *window = nullptr;      
 };
 
-int main(int argc, char * argv[]){
+int main(int argc, char* argv[]){
 	if(argc < 2) {
 		printf("Correct usage: FicelloEngine [file]");
 		exit(-1);
 	}
-	
-	int argv_lenght = strlen(argv[1]);
 
-	if(argv_lenght < 5) { 
-		printf("Correct usage: FicelloEngine [file]");
-		exit(-1);
-   	} else {
-		FicelloEngine window(1080, 1920);
-		SDL_Event event;    // Event variable
+	FicelloEngine window(1080, 1920);
+	SDL_Event event;    
 				
-		lua_State* L = luaL_newstate();
-		luaL_openlibs(L);
-		lua_register(L, "test", test_func);
-		luaL_dofile(L, argv[1]);
-		lua_close(L);
+	lua_State* L = luaL_newstate();
+	luaL_openlibs(L);
+	lua_register(L, "test", test_func);
+	luaL_dofile(L, argv[1]);
+	lua_close(L);
 
-		while(!(event.type == SDL_QUIT)){
-			SDL_Delay(10);  // setting some Delay
-			SDL_PollEvent(&event);  // Catching the poll event.
-		}
+	while(!(event.type == SDL_QUIT)){
+		SDL_Delay(10); 
+		SDL_PollEvent(&event);  // Catching the poll event.
 	}
 	return 0;
 }
