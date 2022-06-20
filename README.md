@@ -4,27 +4,16 @@ A small open source C++ SDL2 game engine for linux with lua as scripting languag
 This is still in creation so there is no doc at the moment.
 
 ## Downloading dependencies
-Arch Linux:
 
-```bash
-pacman -S sdl2
-pacman -S base-devel
-pacman -S cmake
-```
-
-Debian:
-
-```bash
-apt-get install build-essentials
-apt-get install libsdl2-dev libsdl2-2.0-0
-```
+the beauty of xmake is automatic dependencies downloading, you juste need to install xmake official web 
+site:
+https://xmake.io/#/
 
 ## Building
 
 ```bash
-cd FicelloEngine/build
-chmod +x build.sh
-./build.sh
+cd.. ficello-master
+xmake
 ```
 
 ## How to use FicelloEngine to make games?
