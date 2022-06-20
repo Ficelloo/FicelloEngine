@@ -4,7 +4,7 @@ add_rules("plugin.vsxmake.autoupdate")
 add_requires("libsdl") -- require sdl2
 add_requires("lua") -- require lua
 
-target("ficelloengine") 
+target("FicelloEngine") 
     set_kind("binary") 
     set_targetdir("bin") 
     set_languages("cxx20") -- c++ 20
