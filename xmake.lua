@@ -3,6 +3,7 @@ add_rules("plugin.vsxmake.autoupdate")
 
 add_requires("libsdl") -- require sdl2
 add_requires("lua") -- require lua
+add_requires("sol2") -- require sol2
 
 target("FicelloEngine") 
     set_kind("binary") 
@@ -11,3 +12,4 @@ target("FicelloEngine")
     add_files("src/*.cpp") 
     add_packages("libsdl") 
     add_packages("lua")
+    add_packages("sol2")
