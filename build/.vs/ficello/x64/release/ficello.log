@@ -1,0 +1,20 @@
+﻿  $xmake config -y  -P . -p windows -m release -a x64 -o "build"
+  checking for Microsoft Visual Studio (x64) version ... 2022
+  $xmake build -y  -P . -w "ficello"
+  [ 22%]: ccache compiling.release ficello\engine.cpp
+  [ 22%]: ccache compiling.release ficello\logsStream.cpp
+  [ 22%]: ccache compiling.release src\main.cpp
+  [ 55%]: archiving.release ficelloEngine.lib
+  [ 77%]: linking.release ficello.exe
+  update vsxmake project -k vsxmake . ..
+  checking for debug.x86 ...
+  checking for Microsoft Visual Studio (x86) version ... 2022
+  checking for debug.x64 ...
+  checking for Microsoft Visual Studio (x64) version ... 2022
+  checking for release.x86 ...
+  checking for Microsoft Visual Studio (x86) version ... 2022
+  checking for release.x64 ...
+  checking for Microsoft Visual Studio (x64) version ... 2022
+  create ok!
+  update vsxmake project ok
+  [100%]: build ok!

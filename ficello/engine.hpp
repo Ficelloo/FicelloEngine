@@ -1,6 +1,6 @@
 #pragma once
+#include "logsStream.hpp"
 #include <entt/entt.hpp>
-#include <ostream>
 
 //engine object
 
@@ -8,11 +8,7 @@ namespace ficello
 {
 	class engine
 	{
-		entt::registry globalRegistry_;
-		//std::ostream debugStream_; //flux de d�bugage, peut �tre utilis� sur std::cout/cerr ou sur un fichier pour cr�e un fichier de logs 
-		//need a window class
-		//need a renderer class
-
+		entt::registry globalRegistry_{};
 	public:
 
 		//specify ctors, dtor and assignement :

@@ -2,3 +2,4 @@
 vsxmake2022
 .xmake
 bin
+.xmake/windows/x64/cache/config
