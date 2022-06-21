@@ -2,7 +2,19 @@
 
 int main(int argc, char* argv[])
 {
-	ficello::engine myFicello{};
-	myFicello.run();
+	try
+	{
+		ficello::engine myFicello{};
+		myFicello.run();
+	}
+	catch (std::exception& e)
+	{
+		ficello::logsStream << e.what();
+	#ifdef NDEBUG
+		std::cerr << "unexcepted execption, go to logs.txt to get more informations"
+	#endif // NDEBUG
+
+	}
+	
 }
 

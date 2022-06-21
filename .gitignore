@@ -1,6 +1,5 @@
-
-vsxmake2022
-.xmake
 bin
 build
+vsxmake2022
+.xmake
 .xmake/windows/x64/cache/config

@@ -1,6 +1,7 @@
 #pragma once
 #include "logsStream.hpp"
 #include <entt/entt.hpp>
+#include <stdexcept>
 
 //engine object
 
